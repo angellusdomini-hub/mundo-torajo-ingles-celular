@@ -98,9 +98,74 @@ button,input{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
  .signal{margin-bottom:20px}.storypane{margin-top:0}
 }
 @media(prefers-reduced-motion:reduce){.character,.stars,.backdrop{animation:none!important;transition:none!important}}
+
+/* HOTFIX DE LEGIBILIDADE: conteúdo primeiro, sem textos sobre ilustrações */
+@media(max-width:650px){
+ html,body{overflow-x:clip!important;width:100%;font-size:18px}
+ .stage,.wrapper,.play,.storypane{overflow-x:clip!important}
+ .wrapper,.play{height:auto!important;min-height:0!important}
+ .topbar{padding:12px 14px!important;min-height:57px!important;align-items:center}
+ .brand{font-size:17px!important;white-space:normal!important;min-width:0;line-height:1.1}
+ .brand small{font-size:11px!important;letter-spacing:.3px!important}
+ .status .pill{font-size:13px!important}
+ .status .track{display:none}
+ .chapterbar{padding:14px 18px 0!important;min-height:65px;position:relative!important;z-index:5}
+ .chapterno{font-size:13px!important;letter-spacing:.5px!important;line-height:1.35}
+ .location{font-size:13px!important;margin:5px 0 0!important;padding:7px 10px!important;max-width:100%;display:inline-block;white-space:normal}
+ .scene-mid{height:200px!important;min-height:200px!important;overflow:hidden!important;margin:0!important;flex-shrink:0;position:relative}
+ .scene-mid:before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#15112d 0%,transparent 40%);z-index:2}
+ .character{height:220px!important;width:190px!important;left:5%!important;bottom:-9px!important;max-height:none!important;z-index:2;animation:none!important;mask-image:linear-gradient(to bottom,#000 0%,#000 85%,transparent 100%)}
+ .signal{right:12px!important;left:auto!important;max-width:46%!important;margin:0 0 25px!important;padding:12px!important;font-size:14px!important;line-height:1.35!important;z-index:4;overflow-wrap:anywhere}
+ .scene-gradient{height:45px!important}
+ .storypane{padding:22px 18px 26px!important;margin:0!important;transform:none!important;border-radius:22px 22px 0 0;min-height:0!important;backdrop-filter:none!important}
+ .story-handle{display:none!important}
+ .headline{font-family:Fredoka,Nunito,system-ui,sans-serif;font-size:clamp(29px,8vw,37px)!important;line-height:1.1!important;letter-spacing:-.5px!important;color:#fff!important;max-width:100%!important;margin:0 0 18px!important;text-shadow:none!important;overflow-wrap:break-word;hyphens:auto}
+ .narrative{font-size:19px!important;line-height:1.6!important;margin:0 0 20px!important;max-width:none!important;color:#fff!important;overflow-wrap:break-word;hyphens:auto}
+ .talk{padding:18px 15px!important;border-left-width:6px!important}
+ .talk strong{font-size:15px!important;letter-spacing:.7px!important;margin-bottom:9px!important}
+ .english{font-size:clamp(22px,6.2vw,27px)!important;line-height:1.32!important;margin:10px 0!important;overflow-wrap:break-word!important;word-break:normal!important}
+ .translation{font-size:17px!important;line-height:1.48!important;color:#554a6a!important;margin:12px 0!important}
+ .voice-actions{grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+ .voice-actions .listen{font-size:15px!important;min-height:55px!important;padding:10px 6px!important;white-space:normal}
+ .controls{margin-top:22px!important}
+ .controls .btn,.btn{font-size:18px!important;min-height:60px!important;padding:14px 16px!important;line-height:1.3}
+ .controls .little{font-size:15px!important;line-height:1.45!important}
+ .question{font-size:23px!important;line-height:1.35!important;overflow-wrap:break-word;margin:14px 0!important}
+ .option{font-size:19px!important;line-height:1.4!important;min-height:70px!important;padding:13px!important;overflow-wrap:break-word}
+ .option .code{width:38px!important;height:38px!important;font-size:17px!important}
+ .feedback{font-size:18px!important;line-height:1.5!important;padding:15px!important}
+ .kicker{font-size:14px!important;line-height:1.4!important}
+ .wordbtn{font-size:20px!important;min-height:60px!important}
+ .assembled{font-size:19px!important;min-height:66px!important}
+ .reset{font-size:17px!important;min-height:53px!important}
+ .inventory{font-size:14px!important;max-height:none!important;overflow:visible!important;line-height:1.5!important;padding:15px 18px!important}
+ .item{font-size:14px!important;display:inline-block;margin:3px}
+ .footer{padding:13px 16px 22px!important;align-items:center}
+ .footer span{font-size:12px!important;max-width:64%!important;line-height:1.4}
+ .soundtoggle{font-size:13px!important;min-height:48px!important}
+ .cover{padding:clamp(180px,31svh,280px) 18px 26px!important;min-height:100svh;justify-content:flex-end}
+ .cover h1{font-size:clamp(45px,12vw,59px)!important;line-height:.98!important;overflow-wrap:break-word}
+ .cover .description{font-size:18px!important;line-height:1.55!important}
+ .cover .kicker{font-size:13px!important}
+ .cover .small{font-size:14px!important}
+ .cover .name{font-size:18px!important;min-height:58px!important}
+ .end h2{font-size:34px!important;line-height:1.15}
+ .end .description{font-size:18px!important;line-height:1.55}
+}
+@media(max-width:359px){
+ .topbar{padding:11px 10px!important}.brand{font-size:15px!important}
+ .scene-mid{height:170px!important;min-height:170px!important}
+ .character{height:190px!important;width:165px!important}
+ .storypane{padding:20px 13px 23px!important}
+ .headline{font-size:28px!important}
+ .narrative{font-size:18px!important}
+ .english{font-size:22px!important}
+ .signal{font-size:12px!important;padding:9px!important}
+ .voice-actions .listen{font-size:14px!important}
+}
 </style></head><body><main class="stage" id="stage"><div class="backdrop"></div><div class="grain"></div><div class="stars"></div><div class="wrapper"><header class="topbar"><div class="brand">🍏 MUNDO <span>TORAJO</span> <small style="color:#cbb9ef">• MOBILE ADVENTURE</small></div><div class="status"><div class="pill" id="xp">⭐ 0 XP</div><div class="track"><div id="progress"></div></div></div></header>
 <section class="cover" id="cover"><div class="kicker">Uma aventura interativa em Verade</div><h1>O ÚLTIMO<br><strong>VÍDEO</strong><br>DE VERADE</h1><div class="description">Uma gravação desapareceu. O portal está roubando a energia da cidade. Torajo e seus amigos precisam de um novo agente que consiga decifrar mensagens em inglês. <b>Você consegue?</b></div><div class="startbox"><input aria-label="Nome do jogador" class="name" id="playerName" maxlength="24" placeholder="Seu nome, agente"><button class="btn" id="start">▶ INICIAR AVENTURA</button></div><p class="small">📱 Edição para celular · 🎧 Inglês com áudio · 4º ano</p></section>
-<section class="play hide" id="play"><div class="chapterbar"><div><div class="chapterno" id="chapter"></div><div class="location" id="location"></div><h2 class="headline" id="title"></h2></div></div><div class="scene-mid"><div class="scene-spark">✦</div><div class="character" id="portrait"></div><div class="signal" id="signal"></div><div class="scene-gradient"></div></div><div class="storypane"><div class="story-handle" aria-hidden="true"></div><div id="storycontent"><p class="narrative" id="narration"></p><div class="talk"><div><strong id="speaker"></strong><div class="english" id="english"></div><div class="translation" id="translation"></div></div><div class="voice-actions"><button class="listen" id="speak">🔊 Ouvir inglês</button><button class="listen slow" id="speakSlow">🐢 Devagar</button></div></div></div><div id="challenge" class="hide"><div class="kicker" style="margin-top:4px">🔓 ENIGMA DE VERADE</div><h3 class="question" id="question"></h3><div id="options"></div><div class="feedback hide" id="feedback"></div></div><div class="controls"><div class="little" id="note">Escute a fala antes de continuar.</div><button class="btn" id="next">INVESTIGAR →</button></div></div><div class="inventory" id="inventory">🎒 Inventário vazio</div></section>
+<section class="play hide" id="play"><div class="chapterbar"><div><div class="chapterno" id="chapter"></div><div class="location" id="location"></div></div></div><div class="scene-mid"><div class="scene-spark">✦</div><div class="character" id="portrait"></div><div class="signal" id="signal"></div><div class="scene-gradient"></div></div><div class="storypane"><div class="story-handle" aria-hidden="true"></div><div id="storycontent"><h2 class="headline" id="title"></h2><p class="narrative" id="narration"></p><div class="talk"><div><strong id="speaker"></strong><div class="english" id="english"></div><div class="translation" id="translation"></div></div><div class="voice-actions"><button class="listen" id="speak">🔊 Ouvir inglês</button><button class="listen slow" id="speakSlow">🐢 Devagar</button></div></div></div><div id="challenge" class="hide"><div class="kicker" style="margin-top:4px">🔓 ENIGMA DE VERADE</div><h3 class="question" id="question"></h3><div id="options"></div><div class="feedback hide" id="feedback"></div></div><div class="controls"><div class="little" id="note">Escute a fala antes de continuar.</div><button class="btn" id="next">INVESTIGAR →</button></div></div><div class="inventory" id="inventory">🎒 Inventário vazio</div></section>
 <section id="ending" class="end hide"><div style="font-size:70px">🏆✨</div><div class="kicker">MISSÃO CUMPRIDA</div><h2>VERADE ESTÁ SALVA!</h2><p id="finalMessage" class="description"></p><div class="talk" style="text-align:left;margin:19px 0"><div><strong>🍏 TORAJO</strong><div class="english">You can do amazing things!</div><div class="translation">Você consegue fazer coisas incríveis!</div></div><button class="listen" id="endVoice">🔊 OUVIR</button></div><div class="badge" id="finalXP"></div><div style="margin-top:22px"><button class="btn" id="restart">↻ JOGAR NOVAMENTE</button></div></section>
 <footer class="footer"><span>Aventura educativa não oficial · Versão celular</span><button class="soundtoggle" id="soundToggle">🔊 Som ligado</button></footer></div></main>
 <script>
@@ -116,7 +181,7 @@ const levels=[
 ];
 const $=id=>document.getElementById(id);let index=0,xp=0,name='Agente',phase='story',sound=true,inventory=[],chosen=[],attempts=0;
 function say(txt,rate=.85){if(!sound||!('speechSynthesis' in window))return; speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(txt);u.lang='en-US';u.rate=rate;u.pitch=1.04;const voices=speechSynthesis.getVoices();u.voice=voices.find(v=>v.lang==='en-US'&&/Google|Natural|Samantha/i.test(v.name))||voices.find(v=>v.lang==='en-US')||voices.find(v=>v.lang.startsWith('en'))||null;speechSynthesis.speak(u)}
-function paint(){let s=levels[index];$('stage').className='stage '+s.mood;$('play').classList.remove('hide');$('cover').classList.add('hide');$('ending').classList.add('hide');$('chapter').textContent='CAPÍTULO '+String(index+1).padStart(2,'0')+' / 07 · '+name.toUpperCase();$('location').textContent=s.place;$('title').textContent=s.title;$('portrait').style.backgroundImage=`url('${PORTRAITS[s.speaker]}')`;$('signal').innerHTML='<b>⚠ ALERTA</b><br>'+s.signal;$('narration').textContent=s.narr;$('speaker').textContent=s.speaker.toUpperCase();$('english').textContent=s.en;$('translation').textContent=s.pt;$('progress').style.width=(index/levels.length*100)+'%';$('xp').textContent='⭐ '+xp+' XP';$('inventory').innerHTML='🎒 INVENTÁRIO: '+(inventory.length?inventory.map(i=>'<span class="item">'+i+'</span>').join(' '):'sem itens ainda');phase='story';$('storycontent').classList.remove('hide');$('challenge').classList.add('hide');$('note').textContent='Escute o personagem e descubra a pista.';$('next').classList.remove('hide');$('next').textContent='🔍 INVESTIGAR →';}
+function paint(){let s=levels[index];$('stage').className='stage '+s.mood;$('play').classList.remove('hide');$('cover').classList.add('hide');$('ending').classList.add('hide');$('chapter').textContent='CAPÍTULO '+String(index+1).padStart(2,'0')+' / 07 · '+name.toUpperCase();$('location').textContent=s.place;$('title').textContent=s.title;$('portrait').style.backgroundImage=`url('${PORTRAITS[s.speaker]}')`;$('signal').innerHTML='<b>⚠ ALERTA</b><br>'+s.signal;$('narration').textContent=s.narr;$('speaker').textContent=s.speaker.toUpperCase();$('english').textContent=s.en;$('translation').textContent=s.pt;$('progress').style.width=(index/levels.length*100)+'%';$('xp').textContent='⭐ '+xp+' XP';$('inventory').innerHTML='🎒 INVENTÁRIO: '+(inventory.length?inventory.map(i=>'<span class="item">'+i+'</span>').join(' '):'sem itens ainda');phase='story';window.scrollTo({top:0,behavior:'instant'});$('storycontent').classList.remove('hide');$('challenge').classList.add('hide');$('note').textContent='Escute o personagem e descubra a pista.';$('next').classList.remove('hide');$('next').textContent='🔍 INVESTIGAR →';}
 function quiz(){const s=levels[index];phase='quiz';attempts=0;chosen=[];$('storycontent').classList.add('hide');$('challenge').classList.remove('hide');$('question').textContent=s.q;$('feedback').classList.add('hide');$('next').classList.add('hide');$('options').replaceChildren();$('note').textContent='Use as pistas e ouça novamente se precisar.';if(s.words){const slot=document.createElement('div');slot.className='assembled';slot.id='assembled';slot.textContent='Toque nas palavras abaixo…';$('options').append(slot);const grid=document.createElement('div');grid.className='wordgrid';s.words.forEach((w,j)=>{let b=document.createElement('button');b.className='wordbtn';b.textContent=w;b.onclick=()=>{b.disabled=true;chosen.push({w,j});slot.textContent=chosen.map(x=>x.w).join(' ');if(chosen.length===s.words.length)checkPuzzle(s)};grid.append(b)});$('options').append(grid);const reset=document.createElement('button');reset.className='reset';reset.textContent='↻ Reorganizar';reset.onclick=()=>{chosen=[];slot.textContent='Toque nas palavras abaixo…';grid.querySelectorAll('button').forEach(b=>b.disabled=false)};$('options').append(reset);}else{s.answers.forEach((a,j)=>{let b=document.createElement('button');b.className='option';let tag=document.createElement('span');tag.className='code';tag.textContent='ABC'[j];const txt=document.createElement('span');txt.textContent=a;b.append(tag,txt);b.onclick=()=>checkAnswer(j);$('options').append(b)});}}
 function checkPuzzle(s){const correct=chosen.map(x=>x.w).join(' ')===s.solution.join(' ');if(!correct){attempts++;$('feedback').classList.remove('hide');$('feedback').textContent='🔎 Quase! A ordem ainda não está certa. Reorganize e tente outra vez.';say('Try again!');return;}complete(true,s.teach)}
 function checkAnswer(j){let s=levels[index];const good=j===s.correct;const buttons=[...$('options').querySelectorAll('.option')];buttons.forEach((b,i)=>{b.disabled=true;if(i===s.correct)b.classList.add('good');else if(i===j)b.classList.add('bad')});complete(good,s.teach)}
